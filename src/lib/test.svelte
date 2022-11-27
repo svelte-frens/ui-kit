@@ -1,4 +1,4 @@
 <script lang="ts">
 </script>
 
-Hello I'm a package
+<h1 class="text-3xl font-bold underline">Hello world!</h1>
