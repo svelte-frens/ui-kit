@@ -1,4 +1,5 @@
 <script>
+  import Button from '$lib/button/button.svelte';
   import Test from '$lib/test.svelte';
 </script>
 
@@ -12,3 +13,5 @@
 </p>
 
 <Test />
+
+<Button>Primary Button</Button>
