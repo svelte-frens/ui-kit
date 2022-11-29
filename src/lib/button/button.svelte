@@ -1,36 +1,47 @@
 <script lang="ts">
+  import type { BUTTON_SIZE } from './button.type';
+
   /**
    * Button types
    */
   export let primary = false;
   export let text = false;
   export let link = false;
+  /**
+   * Button size
+   */
+  export let size: BUTTON_SIZE = 'medium';
 
-  const commonClasses = 'box-border whitespace-nowrap shadow-sm';
+  const commonClasses = 'box-border whitespace-nowrap';
+
+  const smallSizeClasses = `h-6 text-sm py-0 px-2 rounded`;
+  const mediumSizeClasses = `h-8 text-sm font-normal py-1 px-4 rounded-md`;
+  const largeSizeClasses = `h-10 text-base font-normal py-2 px-4 rounded-lg`;
 
   const primaryTypeClasses =
-    commonClasses +
-    'h-8 font-normal bg-blue-600 text-blue-50 text-sm px-4 py-1 rounded-md hover:bg-blue-500 active:bg-blue-700 transition-all';
-
-  const defaultTypeClasses =
-    commonClasses +
-    `h-8 font-normal bg-white border-gray-300 border text-sm text-gray-900 px-4 py-1 rounded-md hover:border-blue-500 hover:text-blue-500 active:border-blue-700 active:text-blue-700 transition-all`;
-
+    'bg-blue-600 text-blue-50 hover:bg-blue-500 active:bg-blue-700 transition-all shadow-sm';
+  const defaultTypeClasses = `bg-white border-gray-300 border text-gray-900 hover:border-blue-500 hover:text-blue-500 active:border-blue-700 active:text-blue-700 transition-all shadow-sm`;
   const textTypeClasses =
-    commonClasses +
-    'h-8 font-normal bg-transparent text-sm text-gray-900 px-4 py-1 rounded-md hover:bg-gray-100 active:bg-gray-300 transition-all';
-
+    'bg-transparent text-gray-900 hover:bg-gray-100 active:bg-gray-300 transition-all';
   const linkTypeClasses =
-    commonClasses +
-    'h-8 font-normal bg-transparent text-sm text-blue-600 px-4 py-1 rounded-md hover:underline hover:text-blue-400 active:text-blue-700 transition-all';
+    'bg-transparent text-blue-600 hover:underline hover:text-blue-400 active:text-blue-700 transition-all';
 
-  const buttonClasses = primary
+  const buttonTypeClasses = primary
     ? primaryTypeClasses
     : text
     ? textTypeClasses
     : link
     ? linkTypeClasses
     : defaultTypeClasses;
+
+  const buttonSizeClasses =
+    size === 'small'
+      ? smallSizeClasses
+      : size === 'large'
+      ? largeSizeClasses
+      : mediumSizeClasses;
+
+  const buttonClasses = `${commonClasses} ${buttonTypeClasses} ${buttonSizeClasses}`;
 </script>
 
 <button class={buttonClasses} type="button">
