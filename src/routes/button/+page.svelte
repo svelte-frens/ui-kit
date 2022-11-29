@@ -7,9 +7,12 @@
     <Button primary>Primary button</Button>
   </li>
   <li class="col-span-1 flex w-full items-center justify-between space-x-6 p-6">
-    <Button>Primary button</Button>
+    <Button>Default button</Button>
   </li>
   <li class="col-span-1 flex w-full items-center justify-between space-x-6 p-6">
-    <Button>Primary button</Button>
+    <Button text>Text button</Button>
+  </li>
+  <li class="col-span-1 flex w-full items-center justify-between space-x-6 p-6">
+    <Button link>Link button</Button>
   </li>
 </ul>

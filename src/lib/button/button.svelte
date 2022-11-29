@@ -16,7 +16,21 @@
     commonClasses +
     `h-8 font-normal bg-white border-gray-300 border text-sm text-gray-900 px-4 py-1 rounded-md hover:border-blue-500 hover:text-blue-500 active:border-blue-700 active:text-blue-700 transition-all`;
 
-  const buttonClasses = primary ? primaryTypeClasses : defaultTypeClasses;
+  const textTypeClasses =
+    commonClasses +
+    'h-8 font-normal bg-transparent text-sm text-gray-900 px-4 py-1 rounded-md hover:bg-gray-100 active:bg-gray-300 transition-all';
+
+  const linkTypeClasses =
+    commonClasses +
+    'h-8 font-normal bg-transparent text-sm text-blue-600 px-4 py-1 rounded-md hover:underline hover:text-blue-400 active:text-blue-700 transition-all';
+
+  const buttonClasses = primary
+    ? primaryTypeClasses
+    : text
+    ? textTypeClasses
+    : link
+    ? linkTypeClasses
+    : defaultTypeClasses;
 </script>
 
 <button class={buttonClasses} type="button">
